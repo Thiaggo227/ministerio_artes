@@ -1,0 +1,581 @@
+    * {
+        font-family: "Zalando Sans Expanded", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    header {
+        background-color: #3434ff;
+        margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 10px;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .headerText{
+        color: #ffffff;
+        font-size: 25px;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 30px;
+    }
+
+    #icone-menu {
+        color: #ffffff;
+        display: none;
+        cursor: pointer;
+        font-size: 28px;
+    }
+
+    li a {
+        text-decoration: none;
+        color: #e8e8e8;
+        font-size: 13px;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    li a:hover {
+        transform: translateY(-2px);
+    }
+
+    .inputNome {
+        padding: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+    }
+
+    .textHeader {
+        font-family: "Zalando Sans Expanded", sans-serif;
+        color: #e8e8e8;
+    }
+
+    input {
+        width: 230px;
+        font-size: 11px;
+        background-color: #e8e8e8;
+        padding: 5px;
+        border: 1px solid #0000007b;
+        outline: none;
+        border-radius: 8px;
+        transition: 0.2s ease;
+    }
+
+    input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px #007bff80;
+    }
+    ::placeholder{
+        color: #000000df;
+        text-align: center;
+    }
+
+    .btnPart {
+        background-color: #0f1dec;
+        color: #ffffff;
+        text-align: center;
+        width: 230px;
+        padding: 7px;
+        font-weight: 700;
+        font-size: 11px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .btnPart:hover {
+        background-color: #000dc9;
+    }
+
+    .btnData {
+        background-color: #0f1dec;
+        color: #ffffff;
+        text-align: center;
+        width: 230px;
+        padding: 7px;
+        font-weight: 700;
+        font-size: 11px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .btnData:hover {
+        background-color: #000dc9;
+    }
+
+    .btnDelete {
+        background-color: red;
+        color: #e8e8e8;
+        text-align: center;
+        width: 230px;
+        padding: 7px;
+        font-weight: 700;
+        font-size: 11px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .btnDelete:hover {
+        background-color: #c00000;
+    }
+
+    #iconeDel {
+        padding: 2px;
+        border-radius: 4px;
+        background-color: #ffffffe8;
+        color: red;
+        margin-left: 10px;
+        transition: 0.3s;
+    }
+
+    #modalData {
+        position: fixed;
+        inset: 0;
+        background: #00000080;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    #modalData.ativo {
+        display: flex;
+    }
+
+    #modalData .modal-content {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        width: 320px;
+        max-width: 90%;
+        text-align: center;
+        border: 3px solid #3c47df;
+        box-shadow: 0 10px 25px #00000089;
+    }
+
+    #modalData .modal-content h3 {
+        color: #3c47df;
+        margin-bottom: 15px;
+    }
+
+    #modalData input {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 8px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: 0.2s ease;
+    }
+
+    #modalData input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px #007bff80;
+    }
+
+    #modalData .modal-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    #modalData .btn-cancelar,
+    #modalData .btn-confirmar {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #modalData .btn-cancelar {
+        background: #e8e8e8;
+    }
+
+    #modalData .btn-confirmar {
+        background: #3c47df;
+        color: #ffffff;
+    }
+
+    #iconeAdd {
+        margin-right: 2px;
+    }
+
+    #nomeEvento {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        font-size: 20px;
+        text-align: center;
+        color: #000000c0;
+        flex-wrap: wrap;
+        /* permite quebrar linha */
+    }
+
+    #nomeEvento span:first-child {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #nomeEvento span.eventoSpan {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #nomeEvento .localEvento {
+        font-size: 22px;
+        color: red;
+        font-weight: 600;
+    }
+
+    #nomeEvento .localEvento::before {
+        content: "Local: ";
+        color: #000000c9;
+    }
+
+    #modalLocal .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 25px;
+        border-radius: 15px;
+        width: 320px;
+        max-width: 90%;
+        text-align: center;
+        border: 3px solid #3c47df;
+        box-shadow: 0 10px 25px #00000089;
+    }
+
+    #modalLocal input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: 0.2s ease;
+    }
+
+    #modalLocal .modal-buttons {
+        display: flex;
+        gap: 10px;
+        /* espaçamento entre os botões */
+        width: 100%;
+    }
+
+    #modalLocal .btn-cancelar,
+    #modalLocal .btn-confirmar {
+        flex: 1;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #modalLocal .btn-cancelar {
+        background: #e8e8e8;
+    }
+
+    #modalLocal .btn-confirmar {
+        background: #3c47df;
+        color: white;
+    }
+
+    .removerEvento {
+        background: transparent;
+        border: none;
+        color: #000000;
+        margin-right: 20px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    #listaParticipantes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        cursor: pointer;
+        gap: 10px;
+    }
+
+    .participante {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        gap: 8px;
+        background: #3c47df;
+        color: #ffffff;
+        padding: 10px;
+        margin-left: 10px;
+        border-radius: 0 12px 0 12px;
+        cursor: grab;
+        user-select: none;
+    }
+
+    .participante:active {
+        cursor: grabbing;
+    }
+
+    .modal {
+        font-size: 20px;
+        position: fixed;
+        inset: 0;
+        background: #00000080;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .modal.ativo {
+        display: flex;
+    }
+
+    .modal-content {
+        font-size: 20px;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        width: 320px;
+        max-width: 90%;
+        text-align: center;
+        border: 3px solid #3c47df;
+        box-shadow: 0 10px 25px #00000089;
+    }
+
+    .modal-content h3 {
+        color: #3c47df;
+        margin-bottom: 15px;
+    }
+
+    #inputParticipante {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .modal-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn-cancelar,
+    .btn-confirmar {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn-cancelar {
+        background: #e8e8e8;
+    }
+
+    .btn-confirmar {
+        background: #3c47df;
+        color: white;
+    }
+
+    .remover {
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .boxPalco {
+        margin-top: 20px;
+        min-height: 50vh;
+        height: auto;
+        margin: 15px;
+        justify-content: center;
+        border: 2px solid #3c47df;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .textPalco {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        color: #000000;
+        opacity: 0.6;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .textForm {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        color: #000000;
+        opacity: 0.6;
+        pointer-events: none;
+        user-select: none;
+    }
+    .share{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000000c0;
+    }
+    .share, h3{
+        color: #000000;
+        font-size: 11px;
+    }
+    h3{
+        background-color: #00000010;
+        color: #000000;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    #iconeShare{
+        color: #000000;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .footer {
+        color: #000000c0;
+        text-align: center;
+        padding: 12px;
+        margin-top: 40px;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width: 768px) {
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 15px;
+            gap: 8px;
+        }
+
+        .textHeader {
+            font-size: 23px;
+            margin-left: 10px;
+        }
+
+        #icone-menu {
+            display: block;
+            cursor: pointer;
+            font-size: 29px;
+            transition: transform 0.25s ease;
+        }
+
+        #icone-menu.ativo {
+            transform: rotate(90deg);
+        }
+
+        #nomeEvento {
+            flex-direction: column;
+            /* evento, local e data em coluna */
+            font-size: 20px;
+            gap: 8px;
+        }
+
+        .menu {
+            position: absolute;
+            margin-top: -5px;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            right: 10px;
+            background-color: #3434ff;
+            padding: 20px;
+            flex-direction: column;
+            gap: 22px;
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+            z-index: 2000;
+            transition: all 0.25s ease;
+        }
+
+        .menu.ativo {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        input,
+        .btnPart,
+        .btnData,
+        .btnDelete {
+            width: 100%;
+            padding: 15px;
+        }
+
+        #iconeDel {
+            padding: 3px;
+            font-size: 15px;
+            border-radius: 5px;
+            background-color: #ffffffae;
+            color: red;
+        }
+
+        .boxPalco {
+            min-height: 60vh;
+        }
+
+        .participante {
+            font-size: 11px;
+            padding: 6px;
+        }
+
+        #modal,
+        #modalLocal,
+        #modalData {
+            z-index: 2000;
+        }
+    }
